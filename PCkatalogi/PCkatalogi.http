@@ -1,0 +1,6 @@
+@PCkatalogi_HostAddress = http://localhost:5144
+
+GET {{PCkatalogi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
