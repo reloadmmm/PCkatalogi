@@ -7,8 +7,7 @@ namespace PCkatalogi.Data
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using var context = new AppDbContext(
-                serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>());
+            using var context = serviceProvider.GetRequiredService<AppDbContext>();
 
             if (context.Categories.Any())
             {
@@ -193,8 +192,8 @@ namespace PCkatalogi.Data
                     RuleName = "Совместимость сокетов AM4",
                     Description = "Процессор с сокетом AM4 совместим только с материнской платой с сокетом AM4",
                     CompatibilityType = "SocketMatch",
-                    SourceComponentId = 1, 
-                    TargetComponentId = 6, 
+                    SourceComponentId = 1,
+                    TargetComponentId = 6,
                     CategoryId = 1,
                     RequiredValue = "AM4",
                     RequiredTargetValue = "AM4"
@@ -204,7 +203,7 @@ namespace PCkatalogi.Data
                     RuleName = "Совместимость сокетов LGA1700",
                     Description = "Процессор с сокетом LGA1700 совместим только с материнской платой с сокетом LGA1700",
                     CompatibilityType = "SocketMatch",
-                    SourceComponentId = 2, 
+                    SourceComponentId = 2,
                     TargetComponentId = 7,
                     CategoryId = 1,
                     RequiredValue = "LGA1700",
@@ -215,7 +214,7 @@ namespace PCkatalogi.Data
                     RuleName = "Совместимость протоколов Zigbee",
                     Description = "Устройства должны поддерживать один протокол Zigbee",
                     CompatibilityType = "ProtocolMatch",
-                    SourceComponentId = 10, 
+                    SourceComponentId = 10,
                     TargetComponentId = 12,
                     CategoryId = 4,
                     RequiredValue = "Zigbee",
