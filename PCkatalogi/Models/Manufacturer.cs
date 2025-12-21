@@ -16,7 +16,7 @@ namespace PCkatalogi.Models
         public string? Country { get; set; }
 
         [StringLength(200)]
-        public string? Website { get; set; }
+        public string? Website { get; set; }  
         public virtual ICollection<Component> Components { get; set; } = new List<Component>();
     }
 }
